@@ -6,9 +6,16 @@
 @section('sectionName')
     @foreach($posts as $post)
         <article class="mb-5">
-            <h2><a href="/posts/{{$post['slug']}}">{{$post['title']}}</a></h2>
-            <h5>By: {{$post["author"]}}</h5>
-            <p>{{$post['body']}}</p>
+            <h2><a href="/posts/{{$post->id}}">{{$post->title}}</a></h2>
+
+            {{--you can use this below syntax, that use object model Post--}}
+            {{--<h2><a href="/posts/{{$post->id}}">{{$post->title}}</a></h2>--}}
+
+            <p>{{$post->execert}}</p>
+
+            {{--you can user {!!  !!}} this blade for not escaping character
+            different with {{}} that do escape character--}}
+
         </article>
     @endforeach
 @endsection

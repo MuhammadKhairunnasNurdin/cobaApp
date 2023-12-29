@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PostManual;
-use Illuminate\Http\Request;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -11,15 +10,15 @@ class PostController extends Controller
     {
         return view('posts', [
             "title" => 'Posts',
-            "posts" =>  PostManual::all()
+            "posts" =>  Post::all()
         ]);
     }
 
-    public function show($slug)
+    public function show(Post $post)
     {
         return view('post', [
-            'title' => "Single PostManual",
-            "post" => PostManual::find($slug)
+            'title' => "Single Post",
+            "post" => $post
         ]);
     }
 }
