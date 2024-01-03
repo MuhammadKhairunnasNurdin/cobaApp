@@ -36,7 +36,8 @@ Route::get('/about', function () {
 
 Route::get('/blog', [PostController::class, 'index']);
 
-Route::get("posts/{post}", [PostController::class, 'show']);
+/*this called route model binding, we're using our slug to retrieve data with slug in binding or where slug = slug(from our get method) */
+Route::get("posts/{post:slug}", [PostController::class, 'show']);
 
 
 
