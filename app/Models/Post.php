@@ -19,4 +19,9 @@ class Post extends Model
     column except that will be filled from user*/
     protected $guarded = ['id'];
     /*you can use one way from two-way above, more recommend if we use guarded*/
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
